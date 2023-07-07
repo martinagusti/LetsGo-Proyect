@@ -1,0 +1,568 @@
+{
+	"info": {
+		"_postman_id": "3e92505f-4117-4d9e-b4bb-d600544e815b",
+		"name": "Viajes Recomendados",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "registerUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"martin 4\",\r\n    \"lastName\": \"agusti4\",\r\n    \"userName\": \"martinagust4\",\r\n    \"email\": \"martinhagusti@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"verifyPassword\":\"123456\",\r\n    \"bio\": \"Mi nombre es martin me gusta viajar por el mundo.\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"martinagusti@hotmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activationCode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/activation?code=R4jHlAII3VT1mhXzYEFcZnUu6vk4OlSXxfVTtJ62htV26F0kPcfOjalyskodxBro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"activation"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "R4jHlAII3VT1mhXzYEFcZnUu6vk4OlSXxfVTtJ62htV26F0kPcfOjalyskodxBro"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uploadProfileImage",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlck5hbWUiOiJtYXJ0aW5hZ3VzdGkiLCJlbWFpbCI6Im1hcnRpbmFndXN0aUBob3RtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjgzODkyNDEzLCJleHAiOjE2ODU2MjA0MTN9.NbP7PnQj73MXc0Ur4aHkGiSseStu-03-dZsXUEXOGQE",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Usuario/Pictures/paris.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/uploadImage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"uploadImage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfile",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlck5hbWUiOiJtYXJ0aW5hZ3VzdGkiLCJlbWFpbCI6Im1hcnRpbmFndXN0aUBob3RtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjgzODkyNDEzLCJleHAiOjE2ODU2MjA0MTN9.NbP7PnQj73MXc0Ur4aHkGiSseStu-03-dZsXUEXOGQE",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"martin\",\r\n    \"lastName\": \"agusti\",\r\n    \"userName\": \"martinagusti3\",\r\n    \"password\": \"123456\",\r\n    \"verifyPassword\":\"123456\",\r\n    \"bio\": \"Mi nombre es martin y me gusta programar!\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/updateprofile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"updateprofile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"18"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "trips",
+			"item": [
+				{
+					"name": "getTripById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/trips/28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								"28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createTrip",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlck5hbWUiOiJtYXJ0aW5hZ3VzdGkiLCJlbWFpbCI6Im1hcnRpbmFndXN0aUBob3RtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjgzODkyNDEzLCJleHAiOjE2ODU2MjA0MTN9.NbP7PnQj73MXc0Ur4aHkGiSseStu-03-dZsXUEXOGQE",
+								"type": "default"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Viaje a Rosario\",\r\n    \"dateExperience\": \"2023-05-10\",\r\n    \"category\": \"viaje-familiar\",\r\n    \"city\": \"Rosario\",\r\n    \"excerpt\": \"Dia de Shopping\",\r\n    \"description\": \"Muy bueno para pasar el dia\"\r\n\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/trips/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTripImage",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlck5hbWUiOiJtYXJ0aW5hZ3VzdGkzIiwiZW1haWwiOiJtYXJ0aW5hZ3VzdGlAaG90bWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTY4NDEzNzY1NCwiZXhwIjoxNjg1ODY1NjU0fQ.Ct95gV10HxafYJqCv0idXwbG4cpwKQ5fiyo4ACQi-jo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tripImage",
+									"type": "file",
+									"src": "/C:/Users/Usuario/Desktop/grievous.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/trips/upload/26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								"upload",
+								"26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTripById",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlck5hbWUiOiJtYXJ0aW5hZ3VzdGkiLCJlbWFpbCI6Im1hcnRpbmFndXN0aUBob3RtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjgzODkyNDEzLCJleHAiOjE2ODU2MjA0MTN9.NbP7PnQj73MXc0Ur4aHkGiSseStu-03-dZsXUEXOGQE",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/trips/32",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								"32"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTrips",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/trips/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTripsFiltered",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/trips?category=viaje-playero&&city=galicia&&orderby=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"trips"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "viaje-playero"
+								},
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": "city",
+									"value": "galicia"
+								},
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": "orderby",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTripsByUserName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/trips/userName/martinagusti3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								"userName",
+								"martinagusti3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comentaries",
+			"item": [
+				{
+					"name": "createCommentary",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlck5hbWUiOiJtYXJ0aW5hZ3VzdGkiLCJlbWFpbCI6Im1hcnRpbmFndXN0aUBob3RtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjgzODkyNDEzLCJleHAiOjE2ODU2MjA0MTN9.NbP7PnQj73MXc0Ur4aHkGiSseStu-03-dZsXUEXOGQE",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comentaries\":\" Muy bueno este viaje para realizarlo en pareja\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/comentaries/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"comentaries",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getComentariesByIdTrip",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlck5hbWUiOiJtYXJ0aW5hZ3VzdGkiLCJlbWFpbCI6Im1hcnRpbmFndXN0aUBob3RtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjgzODkyNDEzLCJleHAiOjE2ODU2MjA0MTN9.NbP7PnQj73MXc0Ur4aHkGiSseStu-03-dZsXUEXOGQE",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/comentaries/31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"comentaries",
+								"31"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "votes",
+			"item": [
+				{
+					"name": "getVotesByIdTrip",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/votes/31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"votes",
+								"31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "newVote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlck5hbWUiOiJtYXJ0aW5hZ3VzdDQiLCJlbWFpbCI6Im1hcnRpbmhhZ3VzdGlAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE2ODM5MTgxODQsImV4cCI6MTY4NTY0NjE4NH0.6Wt9-ud-4YChFt0Bg-9bF19cmEClN2yWRruSJmHOOiw",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/votes/24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"votes",
+								"24"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

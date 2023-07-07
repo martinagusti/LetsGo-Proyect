@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&family=Open+Sans:wght@400;500&family=Roboto:wght@300;400;500&display=swap");
+
+.map-container2 {
+  display: flex;
+  max-width: 80vw;
+  height: 90vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.maps-title {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.map {
+  width: 60vw;
+  max-width: 60vw;
+  height: 80vh;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px 3px black;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.map-img {
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.maps-trip-container {
+  display: flex;
+  position: absolute;
+  left: auto;
+  right: auto;
+  bottom: 70px;
+  width: 90%;
+  max-width: 600px;
+  min-width: 200px;
+  border-radius: 10px;
+  background-color: rgb(228, 228, 241);
+  border: 1px solid rgb(0, 0, 0, 0.5);
+  animation-name: mover;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+.map-data-container {
+  width: 100%;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+}
+.map-data-container h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.map-data-container h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.btn-visit {
+  background-color: rgb(58, 138, 212);
+  color: white;
+  border: 1px solid rgb(58, 138, 212);
+  border-radius: 5px;
+  width: 70%;
+  height: 30px;
+}
+
+.likes-userName {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: auto;
+}
+
+@keyframes mover {
+  from {
+    transform: translateY(300%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .maps-trip-container {
+    width: 60vw;
+    flex-direction: column;
+  }
+
+  .map {
+    width: 90vw;
+    max-width: 85vw;
+  }
+}

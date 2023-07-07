@@ -1,0 +1,90 @@
+.notification-container {
+  position: fixed;
+  width: 300px;
+  height: 87vh;
+  top: 70px;
+  right: 20px;
+  background-color: rgb(241, 248, 250);
+  text-align: center;
+  padding: 10px 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 1px rgb(149, 172, 180);
+  overflow: scroll;
+  z-index: 1000;
+}
+
+.notification {
+  background-color: rgb(211, 211, 211, 0.6);
+  padding: 5px 5px;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  gap: 5px;
+  position: relative;
+}
+
+.notification:hover {
+  cursor: pointer;
+}
+
+.notification-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.notification-img-mini {
+  width: 25px;
+  height: 25px;
+  background-image: url("../../assets/like-fill.png");
+  background-size: cover;
+  border-radius: 50%;
+  position: absolute;
+  left: 50px;
+  bottom: 10px;
+}
+
+.notification-img-mini2 {
+  width: 25px;
+  height: 25px;
+  background-image: url("../../assets/comment-notif.png");
+  background-size: cover;
+  border-radius: 50%;
+  position: absolute;
+  left: 50px;
+  bottom: 10px;
+}
+
+.notification-span {
+  color: rgb(59, 81, 180);
+}
+
+.notifications-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.btn-clean {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.notification-container::-webkit-scrollbar {
+  width: 7px;
+}
+
+@media screen and (max-width: 768px) {
+  .notification-container {
+    height: 85vh;
+  }
+}
